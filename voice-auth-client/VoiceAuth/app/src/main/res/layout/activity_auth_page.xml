@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/black"
+    tools:context=".AuthPage">
+
+    <TextView
+        android:id="@+id/TV9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN TO PROFILE"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#F08080"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TV10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:text="PLEASE ENTER YOUR NAME"
+        android:textSize="20sp"
+        android:textColor="#FFFF00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV9" />
+
+    <EditText
+        android:id="@+id/RegN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="Name:"
+        android:textSize="20sp"
+        android:background="#DDD7D7"
+        android:padding="15sp"
+        android:layout_marginTop="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV10" />
+
+    <Button
+        android:id="@+id/Go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="ENTER"
+        android:background="@drawable/curve_long_button"
+        android:textSize="20sp"
+        android:textColor="#FFFF00"
+        android:paddingHorizontal="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegN"
+        />
+
+    <Button
+        android:id="@+id/VoiceA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="Voice Authentication"
+        android:visibility="gone"
+        android:background="@drawable/curve_long_button"
+        android:textSize="20sp"
+        android:textColor="#FFFF00"
+        android:paddingHorizontal="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Go"/>
+
+    <TextView
+        android:id="@+id/TV14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="10sp"
+        android:paddingHorizontal="20sp"
+        android:foregroundGravity="center_horizontal"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:text="RECITE THE FOLLOWING SENTENCE"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/VoiceA"/>
+
+
+    <TextView
+        android:id="@+id/TV15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="-- sentence --"
+        android:layout_marginTop="10sp"
+        android:textSize="20sp"
+        android:textColor="#2196F3"
+        android:background="@drawable/blue_box"
+        android:padding="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TV14" />
+
+    <TextView
+        android:id="@+id/Verifylog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="stats"
+        android:textColor="#2196F3"
+        android:layout_marginBottom="5sp"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
