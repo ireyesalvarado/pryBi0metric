@@ -23,16 +23,23 @@ def verify():
     '''
     verify from wav files
     '''
-    def get_and_save_temp_file(request_file):
-        file_storage = request.files[request_file]
-        temp_path = os.path.join(app_setup.TEMP_FOLDER, file_storage.filename)
-        file_storage.save(temp_path)
-        return temp_path
+    data = request.get_json()
+    namefileBase = data['namefileBase']
+    namefileTemporal = data['namefileTemporal']
+
+    temp_path_base = os.path.join('D:\pry0auth\wav', namefileTemporal)
+    temp_path_temporal = os.path.join('D:\pry0auth\\rec', namefileBase)
+
+    # def get_and_save_temp_file(request_file):
+    #    file_storage = request.files[request_file]
+    #    temp_path = os.path.join(app_setup.TEMP_FOLDER, file_storage.filename)
+    #    file_storage.save(temp_path)
+    #    return temp_path
 
     # f1 = request.files["wav1"]
     # f2 = request.files["wav2"]
-    f1_path = get_and_save_temp_file("wav1")
-    f2_path = get_and_save_temp_file("wav2")
+    f1_path = temp_path_base
+    f2_path = temp_path_temporal
 
     result = VOICE_AUTH_MODEL.authenticate(f1_path, f2_path)
 
@@ -71,4 +78,4 @@ def getspeechtext():
 
 if __name__ == "__main__":
     #application.run(debug=True)
-    application.run(host='192.168.1.4', port=5002)
+    application.run(host='192.168.110.1', port=5002)
