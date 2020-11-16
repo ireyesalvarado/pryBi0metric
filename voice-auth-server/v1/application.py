@@ -23,14 +23,10 @@ def verify():
     '''
     verify from wav files
     '''
-    #session = boto3.Session(
-    # aws_access_key_id='AKIAJQ2P4ECT5NPIE2IA',
-    # aws_secret_access_key='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',
-    # region_name='us-west-2'
-    #)
 
-    s32 = boto3.client('s3',aws_access_key_id='AKIAJQ2P4ECT5NPIE2IA',
-     aws_secret_access_key='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')
+
+    s32 = boto3.client('s3',aws_access_key_id='xxxxxxxxxxx',
+     aws_secret_access_key='xxxxxxxxxxxxxxxxxxxx')
 
     #s3 = session.resource('s3')
 
@@ -79,8 +75,8 @@ def verify():
 @application.route('/getspeechtext', methods=['POST'])
 def getspeechtext():
 
-    s32 = boto3.client('s3',aws_access_key_id='AKIAJQ2P4ECT5NPIE2IA',
-    aws_secret_access_key='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')
+    s32 = boto3.client('s3',aws_access_key_id='xxxxxxxxxx',
+    aws_secret_access_key='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
 
     data = request.get_json()
     namefile = data['namefile']
