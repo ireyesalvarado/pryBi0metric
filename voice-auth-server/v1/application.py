@@ -4,10 +4,15 @@ from VoiceAuthentication import VoiceAuthentication
 import app_setup
 import speech_recognition as speech_recog
 import boto3
+from decouple import config
+
+
 
 application = Flask(__name__)
 
 VOICE_AUTH_MODEL = VoiceAuthentication('mobile_model.pt')
+ACCESS_KEY_ID = config('ACCESSKEYID')
+SECRET_ACCESS_KEY = config('SECRETACCESSKEY')
 
 
 @application.route('/')
@@ -23,10 +28,11 @@ def verify():
     '''
     verify from wav files
     '''
+    ACCESS_KEY_ID = config('ACCESSKEYID')
+    SECRET_ACCESS_KEY = config('SECRETACCESSKEY')
 
-
-    s32 = boto3.client('s3',aws_access_key_id='xxxxxxxxxxx',
-     aws_secret_access_key='xxxxxxxxxxxxxxxxxxxx')
+    s32 = boto3.client('s3',aws_access_key_id=ACCESS_KEY_ID,
+     aws_secret_access_key=SECRET_ACCESS_KEY)
 
     #s3 = session.resource('s3')
 
@@ -75,8 +81,8 @@ def verify():
 @application.route('/getspeechtext', methods=['POST'])
 def getspeechtext():
 
-    s32 = boto3.client('s3',aws_access_key_id='xxxxxxxxxx',
-    aws_secret_access_key='xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    s32 = boto3.client('s3',aws_access_key_id=ACCESS_KEY_ID,
+    aws_secret_access_key=SECRET_ACCESS_KEY)
 
     data = request.get_json()
     namefile = data['namefile']
